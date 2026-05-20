@@ -1,5 +1,7 @@
 import express, { Application } from 'express'
 import authRoutes from '../routes/auth.routes'
+import cuentaRoutes from '../routes/cuenta.routes'
+
 
 //Clase para configurar el servidor Express
 export class Server{
@@ -20,6 +22,7 @@ export class Server{
     // Método para definir las rutas del servidor
     private routes(): void {
         this.app.use('/api/auth', authRoutes)
+        this.app.use('/api/cuentas', cuentaRoutes)
     }
     // Método para arrancar el servidor
     public start(): void {
