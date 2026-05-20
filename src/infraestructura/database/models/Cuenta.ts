@@ -14,7 +14,7 @@ const CuentaSchema = new mongoose.Schema({
     tipo: {
         type: String,
         required: true,
-        enum: ['Efectivo', 'Credito', 'Transferencia', 'Otro']
+        enum: ['efectivo', 'credito', 'transferencia','debito', 'otro']
     },
     saldo: {
         type: Number,
