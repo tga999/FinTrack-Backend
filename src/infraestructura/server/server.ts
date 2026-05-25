@@ -1,4 +1,5 @@
 import express, { Application } from 'express'
+import cors from 'cors'
 import authRoutes from '../routes/auth.routes'
 import cuentaRoutes from '../routes/cuenta.routes'
 import categoriaRoutes from '../routes/categoria.routes'
@@ -20,6 +21,9 @@ export class Server{
     // Método para configurar los middlewares del servidor
     private middlewares(): void {
         this.app.use(express.json())
+        this.app.use(cors({
+            origin: 'http://localhost:5173', // Permitir solo el frontend en localhost:5173
+        }))
     }
     // Método para definir las rutas del servidor
     private routes(): void {
