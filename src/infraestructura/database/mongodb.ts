@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
 // funcion para conectar a la base de datos
-export const connectDB = async (url: string) : Promise<void> => {
+export const connectDB = async (uri: string) : Promise<void> => {
     // Conectar a la base de datos usando mongoose
     try{
-        await mongoose.connect(url);
+        await mongoose.connect(uri);
         console.log('Connectado a MongoDB');
     }
     // Si hay error mostrar el error y salir del proceso
